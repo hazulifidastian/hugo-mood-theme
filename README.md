@@ -12,6 +12,7 @@ This theme based on [Hugo Lithium Theme](https://github.com/jrutheiser/hugo-lith
 - Responsive
 - Disqus
 - Google Analytics
+- Night Mode
 
 ## Installation
 
