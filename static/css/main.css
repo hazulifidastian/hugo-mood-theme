@@ -396,10 +396,13 @@ td {
     font-size: 38px;
   }
 
-  .archive-item-date {
+  .archive-item-link {
     font-size: 19px;
-    text-align: right;
-    float: right;
+  }
+
+  .archive-item-date,
+  .archive-item-term-count {
+    font-size: 19px;
   }
 
   .article-title {
