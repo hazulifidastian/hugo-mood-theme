@@ -34,7 +34,7 @@ file located in the [exampleSite](https://github.com/hazulifidastian/hugo-mood-t
 
 Used for blog stories.
 
-Run `hugo new stories/<post-name>.md` to create a post.
+Run `hugo new stories/<story-name>.md` to create a story.
 
 ### Page
 
