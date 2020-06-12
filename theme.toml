@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
+
+name = "Mood"
+license = "MIT"
+licenselink = "https://github.com/hazulifidastian/hugo-mood-theme/blob/master/LICENSE.md"
+description = "Mood minimal theme"
+homepage = "https://github.com/hazulifidastian/hugo-mood-theme"
+tags = ["blog"]
+features = ["blog", "google analytics"]
+min_version = 0.15
+
+[author]
+  name = "Hazuli Fidastian"
+  homepage = "http://hazulifidastian.id/"
