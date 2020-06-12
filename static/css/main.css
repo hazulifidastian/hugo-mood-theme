@@ -100,7 +100,10 @@ img {
 }
 
 .nav-links a:hover {
-  color: #000;
+  border-bottom: 2px solid #ffce07;
+  box-shadow: inset 0 -3px 0 #ffce07;
+  background: transparent;
+  transition: background 150ms ease;
 }
 
 .content {
@@ -273,8 +276,9 @@ img {
 }
 
 .archive-item-link:hover {
+  border-bottom: 2px solid #ffce07;
   box-shadow: inset 0 -3px 0 #ffce07;
-  background: #ffce07;
+  background: transparent;
   transition: background 150ms ease;
 }
 
