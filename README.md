@@ -30,11 +30,11 @@ file located in the [exampleSite](https://github.com/hazulifidastian/hugo-mood-t
 
 ## Content Types
 
-### Post
+### Story
 
-Used for blog posts.
+Used for blog stories.
 
-Run `hugo new post/<post-name>.md` to create a post.
+Run `hugo new stories/<post-name>.md` to create a post.
 
 ### Page
 
