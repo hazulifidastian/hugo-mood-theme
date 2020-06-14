@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 a {
@@ -58,7 +58,7 @@ img {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 15px;
-  font-family: "Lato", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   text-align: right;
 }
 
@@ -127,7 +127,7 @@ img {
   margin-top: 12px;
   float: right;
   font-size: 10px;
-  font-family: "Lato", sans-serif;
+  font-family: "PT Sans", sans-serif;
   padding: 1px 5px;
   font-weight: bold;
   border-radius: 3px;
@@ -256,7 +256,7 @@ img {
 .archive-item-date,
 .archive-item-term-count {
   color: #8a7c6a;
-  font-family: "Lato", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   font-size: 18px;
   padding: 5px 0;
   margin-top: 0px;
@@ -267,7 +267,7 @@ img {
   display: inline-block;
   text-decoration: none;
   font-size: 18px;
-  font-family: "Lato", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   font-weight: 600;
   margin-left: 1em;
   color: #555;
@@ -303,7 +303,7 @@ td {
 .footer {
   padding: 25px 0;
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 .footer-links {
