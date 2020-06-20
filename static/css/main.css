@@ -1,26 +1,26 @@
 /* m-plus-1p-regular - latin */
-@font-face {
-  font-family: "M PLUS 1p";
-  font-style: normal;
-  font-weight: 400;
-  src: local("M PLUS 1p"), local("MPLUS1p-Regular"),
-    url("../fonts/m-plus-1p-v19-latin-regular.woff2") format("woff2"),
-    url("../fonts/m-plus-1p-v19-latin-regular.woff") format("woff");
-  block-timeout: 0.5; //300 ms
-  swap-timeout: 0; // Never swap
-}
+/* @font-face { */
+/*   font-family: "Open Sans"; */
+/*   font-style: normal; */
+/*   font-weight: 400; */
+/*   src: local("Open Sans"), local("MPLUS1p-Regular"), */
+/*     url("../fonts/m-plus-1p-v19-latin-regular.woff2") format("woff2"), */
+/*     url("../fonts/m-plus-1p-v19-latin-regular.woff") format("woff"); */
+/*   block-timeout: 0.5; //300 ms */
+/*   swap-timeout: 0; // Never swap */
+/* } */
 
 /* m-plus-1p-700 - latin */
-@font-face {
-  font-family: "M PLUS 1p";
-  font-style: bold;
-  font-weight: 700;
-  src: local("M PLUS 1p Bold"), local("MPLUS1p-Bold"),
-    url("../fonts/m-plus-1p-v19-latin-700.woff2") format("woff2"),
-    url("../fonts/m-plus-1p-v19-latin-700.woff") format("woff");
-  block-timeout: 0.5; //300 ms
-  swap-timeout: 0; // Never swap
-}
+/* @font-face { */
+/*   font-family: "Open Sans"; */
+/*   font-style: bold; */
+/*   font-weight: 700; */
+/*   src: local("Open Sans Bold"), local("MPLUS1p-Bold"), */
+/*     url("../fonts/m-plus-1p-v19-latin-700.woff2") format("woff2"), */
+/*     url("../fonts/m-plus-1p-v19-latin-700.woff") format("woff"); */
+/*   block-timeout: 0.5; //300 ms */
+/*   swap-timeout: 0; // Never swap */
+/* } */
 
 html,
 body {
@@ -30,12 +30,9 @@ body {
 }
 
 body {
-  font-family: "M PLUS 1p", sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "liga" on;
-  color: #555;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  font-weight: 200;
 }
 
 h1,
@@ -44,7 +41,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  color: #13022c;
+  font-weight: 700;
 }
 
 a {
@@ -82,7 +81,7 @@ img {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 15px;
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: right;
 }
 
@@ -135,13 +134,14 @@ img {
   margin: 60px auto 80px;
   padding: 0 15px;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .article-title {
   font-size: 34px;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.5;
+  color: #13022c;
 }
 
 .article-date {
@@ -151,12 +151,16 @@ img {
   margin-top: 12px;
   float: right;
   font-size: 10px;
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding: 1px 5px;
   font-weight: bold;
   border-radius: 3px;
   background: #bbb;
   color: #fff;
+}
+
+.article-content {
+  padding-top: 0.9em;
 }
 
 .article-content h1,
@@ -170,6 +174,7 @@ img {
 
 .article-content p {
   margin: 15px 0 25px;
+  font-weight: 200;
 }
 
 .article-content a {
@@ -232,21 +237,24 @@ img {
 }
 
 .article-date {
-  color: #555;
+  color: #333;
 }
 
 .article-duration {
-  background-color: #555;
+  background-color: #333;
 }
 
 #article-toc {
-  padding: 0.9em 1em;
-  border: 2px dashed #ccc;
+  padding: 0.9em 0 0 0;
 }
 
 #article-toc h2 {
   margin-top: 0;
   text-decoration: underline;
+}
+
+#article-toc ul {
+  margin-bottom: 0;
 }
 
 #article-toc #TableOfContents a {
@@ -276,7 +284,7 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  line-height: 1.3em;
+  line-height: 1.5;
   text-align: left;
   color: #111;
 }
@@ -288,14 +296,14 @@ img {
 
 .archive-item {
   display: flex;
-  margin: 5px 0 0.5em;
+  margin: 0;
   padding: 0;
 }
 
 .archive-item-date,
 .archive-item-term-count {
   color: #8a7c6a;
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   padding: 5px 0;
   margin-top: 0px;
@@ -305,9 +313,9 @@ img {
 .archive-item-link {
   display: inline-block;
   text-decoration: none;
-  font-size: 18px;
-  font-family: "M PLUS 1p", sans-serif;
-  font-weight: 600;
+  font-size: 19px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
   margin-left: 1em;
   color: #555;
   padding: 5px 0;
@@ -315,8 +323,7 @@ img {
 }
 
 .archive-item-link:hover {
-  border-bottom: 2px solid #ffce07;
-  box-shadow: inset 0 -3px 0 #ffce07;
+  box-shadow: inset 0 -5px 0 #ffce07;
   background: transparent;
   transition: background 150ms ease;
 }
@@ -342,7 +349,7 @@ td {
 .footer {
   padding: 25px 0;
   text-align: center;
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .footer-links {
@@ -422,8 +429,8 @@ td {
   }
 
   .content {
-    font-size: 19px;
-    line-height: 1.8;
+    font-size: 18px;
+    line-height: 1.5;
     margin: 100px auto;
   }
 
