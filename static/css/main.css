@@ -112,8 +112,8 @@ img {
 
 .article-title {
   font-size: 34px;
-  margin: 0;
-  line-height: 1.5;
+  margin: 0 0 0.3em;
+  line-height: 1.1;
   color: #13022c;
   text-align: center;
 }
