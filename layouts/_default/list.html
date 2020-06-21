@@ -5,11 +5,17 @@
     <div class="archive">
         <h2 class="archive-title">{{ .Title }}</h2>
         {{ range .Pages }}
+        <a href="{{ .Permalink }}" class="archive-item-link">{{ .Title }}</a>
         <article class="archive-item">
-            <span class="archive-item-date">
-                +{{ .Date.Format "01/02" }}
-            </span>
-            <a href="{{ .Permalink }}" class="archive-item-link">{{ .Title }}</a>
+          <div class="archive-meta">
+            <span class="archive-item-date">{{ .Date.Format "January 2, 2006" }}</span>
+            {{ if .Params.tags }}
+            &#x2b29; 
+            <div class="archive-tags">
+              Tags: {{ delimit .Params.tags ", " }}
+            </div>
+            {{ end }}
+          </div>
         </article>
         {{ end }}
     </div>
