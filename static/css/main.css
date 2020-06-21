@@ -304,7 +304,7 @@ img {
 .archive-item-term-count {
   color: #8a7c6a;
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+  font-size: 17.5px;
   padding: 5px 0;
   margin-top: 0px;
   display: block;
@@ -421,7 +421,7 @@ td {
   }
 
   .nav-links {
-    font-size: 18px;
+    font-size: 17.5px;
   }
 
   .nav-links li {
@@ -429,7 +429,7 @@ td {
   }
 
   .content {
-    font-size: 18px;
+    font-size: 17.5px;
     line-height: 1.5;
     margin: 100px auto;
   }
