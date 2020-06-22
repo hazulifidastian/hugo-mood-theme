@@ -23,7 +23,7 @@ h5,
 h6 {
   font-family: "Bree Serif", sans-serif;
   color: #13022c;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 a {
@@ -294,7 +294,6 @@ img {
   display: inline-block;
   text-decoration: none;
   font-size: 18px;
-  font-weight: 700;
   color: inherit;
   padding: 5px 0 0;
   border-bottom: none;
