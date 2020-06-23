@@ -151,7 +151,6 @@ img {
 
 .article-content p {
   margin: 15px 0 25px;
-  font-weight: 200;
 }
 
 .article-content a {
@@ -215,9 +214,39 @@ img {
 
 #article-toc {
   padding: 0.9em 0 0 0;
+  text-align: center;
 }
 
-#article-toc h2 {
+#article-toc input[type="checkbox"] {
+  display: none;
+}
+
+#article-toc .lbl-toggle {
+  color: #13022c;
+  display: inline-block;
+  padding: 6px 0 0 0px;
+  cursor: pointer;
+}
+
+#article-toc .lbl-toggle:hover {
+  color: rgba(19, 2, 44, 0.8);
+}
+
+#article-toc .lbl-toggle:active {
+  color: rgba(19, 2, 44, 1);
+}
+
+#article-toc .toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100vh;
+}
+
+#article-toc .collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.25s ease-in-out;
+}
+#article-toc-menu hover #article-toc h2 {
   margin-top: 0;
   text-decoration: underline;
 }
@@ -228,20 +257,20 @@ img {
 }
 
 /* Direct children */
-#TableOfContents > ul {
+#TableOfContents ul {
   margin-bottom: 0;
   list-style-position: inside;
   padding-left: 0;
+  font-family: "Bree Serif", serif;
 }
 
-#TableOfContents > ul > li:before {
-  content: url(hash.svg);
-  margin-right: 0.5em;
+#TableOfContents > ul > li {
+  margin-top: 0.7em;
 }
 
-#TableOfContents > ul > li ul > li:before {
-  content: url(hash.svg);
-  margin-right: 0.5em;
+#TableOfContents > ul > li ul {
+  font-size: 90%;
+  color: rgba(51, 51, 51, 0.9);
 }
 
 #TableOfContents a {
