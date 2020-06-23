@@ -229,19 +229,18 @@ img {
 
 /* Direct children */
 #TableOfContents > ul {
-  font-family: "Bree Serif", serif;
   margin-bottom: 0;
   list-style-position: inside;
   padding-left: 0;
 }
 
 #TableOfContents > ul > li:before {
-  content: "#";
+  content: url(hash.svg);
   margin-right: 0.5em;
 }
 
 #TableOfContents > ul > li ul > li:before {
-  content: "#";
+  content: url(hash.svg);
   margin-right: 0.5em;
 }
 
@@ -309,10 +308,9 @@ img {
 }
 
 .archive-meta {
-  display: flex;
+  display: block;
   margin: 0 0 0.3em 0;
   font-size: 90%;
-  text-transform: capitalize;
 }
 
 table {
