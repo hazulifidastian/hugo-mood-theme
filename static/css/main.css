@@ -214,33 +214,62 @@ ol {
   margin-bottom: 3em;
 }
 
-#article-toc {
-  font-family: "Nunito", sans;
-  padding: 0.9em 0 0 0;
-  text-align: center;
-}
-
 #article-toc input[type="checkbox"] {
   display: none;
 }
 
-#article-toc .lbl-toggle {
-  color: #13022c;
-  display: inline-block;
-  padding: 6px 0 0 0px;
+#article-toc .lbl-toggle svg {
   cursor: pointer;
 }
 
-#article-toc .lbl-toggle:hover {
-  color: rgba(19, 2, 44, 0.8);
+#article-toc .lbl-toggle .toggle-melihat-icon,
+#article-toc .lbl-toggle .toggle-menyembunyikan-icon {
+  padding-left: 5px;
+  margin-right: 2px;
+  box-shadow: inset 0 -3px 0 #ffce07;
 }
 
-#article-toc .lbl-toggle:active {
-  color: rgba(19, 2, 44, 1);
+#article-toc .lbl-toggle .toggle-melihat-icon:hover,
+#article-toc .lbl-toggle .toggle-menyembunyikan-icon:hover {
+  background-color: #ffce07;
+}
+
+/* Toc toggle logic */
+
+#article-toc .toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100%;
 }
 
 #article-toc .toggle:checked + .lbl-toggle + .collapsible-content {
   max-height: 100%;
+}
+
+#article-toc .toggle:checked + .lbl-toggle > .toggle-menyembunyikan-icon {
+  display: inline;
+}
+
+#article-toc .toggle:checked + .lbl-toggle > .toggle-melihat-icon {
+  display: none;
+}
+
+#article-toc .toggle:checked + .lbl-toggle > .toggle-menyembunyikan-icon {
+  display: inline;
+}
+
+#article-toc .toggle:checked + .lbl-toggle > .toggle-melihat-text {
+  display: none;
+}
+
+#article-toc .toggle:checked + .lbl-toggle > .toggle-menyembunyikan-text {
+  display: inline;
+}
+
+/* End of toc toggle logic */
+
+#article-toc .toggle-menyembunyikan-icon,
+#article-toc .toggle-menyembunyikan-text {
+  display: none;
+  transition: max-height 0.25s ease-in-out;
 }
 
 #article-toc .collapsible-content {
@@ -249,25 +278,26 @@ ol {
 
   transition: max-height 0.25s ease-in-out;
 }
-#article-toc-menu hover #article-toc h2 {
-  margin-top: 0;
+
+#article-toc .collapsible-content .toc-title {
   text-decoration: underline;
 }
 
 #TableOfContents ul {
   list-style-position: inside;
-  list-style: none;
 }
 
-/* Direct children */
 #TableOfContents ul {
   margin-bottom: 0;
   list-style-position: inside;
-  padding-left: 0;
+}
+
+/* Direct children */
+#TableOfContents > ul {
+  padding-left: 1em;
 }
 
 #TableOfContents > ul > li {
-  font-weight: bold;
   margin-top: 0.7em;
 }
 

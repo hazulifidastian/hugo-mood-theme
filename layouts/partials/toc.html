@@ -3,13 +3,20 @@
 <div id="article-toc">
   <input id="collapsible" class="toggle" type="checkbox">
   <label for="collapsible" class="lbl-toggle" title="Daftar Isi">
-    <span><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
+    Klik 
+    <span class="toggle-melihat-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 -4 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-toggle-left"><rect x="1" y="5" width="22" height="14" rx="7" ry="7"></rect><circle cx="8" cy="12" r="3"></circle></svg>
+    </span>
+    <span class="toggle-menyembunyikan-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 -4 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-toggle-right"><rect x="1" y="5" width="22" height="14" rx="7" ry="7"></rect><circle cx="16" cy="12" r="3"></circle></svg>    </span>
+    <span class="toggle-melihat-text">untuk melihat daftar isi.</span>
+    <span class="toggle-menyembunyikan-text">untuk menyembunyikan daftar isi.</span>
   </label>
-
+  
   <div class="collapsible-content">
     <div class="content-inner">
       <div id="article-toc-content">
-        <h2 class="toc-title">Daftar Isi</h2>
+        <h2 class="toc-title"># Daftar Isi</h2>
         {{ .TableOfContents }}
       </div>
     </div>
