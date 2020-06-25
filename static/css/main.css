@@ -53,8 +53,6 @@ img {
 .header {
   padding: 20px 0;
   position: relative;
-  background: #f5f5f5;
-  border-bottom: 1px solid #eaeaea;
 }
 
 .nav {
@@ -414,9 +412,6 @@ td {
 
   .header {
     padding: 5em 0 1em;
-    position: relative;
-    background: transparent;
-    border-bottom: none;
   }
 
   .higlight,
