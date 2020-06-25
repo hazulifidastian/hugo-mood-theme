@@ -154,7 +154,6 @@ img {
 .article-content a {
   text-decoration: none;
   color: inherit;
-  border-bottom: 2px solid #ffce07;
   box-shadow: inset 0 -3px 0 #ffce07;
   background: transparent;
   transition: background 150ms ease;
@@ -172,6 +171,11 @@ img {
   overflow: hidden;
   border: none;
   background: #e5e5e5;
+}
+
+.article-content ul,
+ol {
+  margin: 15px 0 25px;
 }
 
 .article-content figure {
