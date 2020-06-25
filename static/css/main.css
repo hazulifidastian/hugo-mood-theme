@@ -1,3 +1,25 @@
+/* nunito-regular - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Nunito Regular"), local("Nunito-Regular"),
+    url("../fonts/nunito-v12-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/nunito-v12-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* noto-sans-regular - latin */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Noto Sans"), local("NotoSans"),
+    url("../fonts/noto-sans-v9-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/noto-sans-v9-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html,
 body {
   margin: 0;
@@ -6,7 +28,7 @@ body {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #333;
   font-size: 16px;
   text-rendering: optimizeLegibility;
@@ -135,16 +157,20 @@ img {
 .article-content h4,
 .article-content h5,
 .article-content h6 {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
-.article-content h1:before,
-.article-content h2:before,
+.article-content h2:before {
+  content: url("chevron-right.svg");
+  margin-right: -7px;
+}
+
 .article-content h3:before,
 .article-content h4:before,
 .article-content h5:before,
 .article-content h6:before {
-  content: "# ";
+  content: url("chevrons-right.svg");
+  margin-right: -2px;
 }
 
 .article-content p {
@@ -279,20 +305,19 @@ ol {
   transition: max-height 0.25s ease-in-out;
 }
 
-#article-toc .collapsible-content .toc-title {
-  text-decoration: underline;
+#article-toc .collapsible-content .toc-title:before {
+  content: url("chevron-right.svg");
+  margin-right: -0.3em;
 }
 
 #TableOfContents ul {
-  list-style-position: inside;
+  list-style: none;
 }
 
 #TableOfContents ul {
   margin-bottom: 0;
-  list-style-position: inside;
 }
 
-/* Direct children */
 #TableOfContents > ul {
   padding-left: 1em;
 }
@@ -301,8 +326,15 @@ ol {
   margin-top: 0.7em;
 }
 
-#TableOfContents > ul > li ul {
-  font-weight: normal;
+#TableOfContents > ul > li:before {
+  content: url("chevron-right-light.svg");
+  font-weight: 600;
+  margin-right: 3.5px;
+}
+
+#TableOfContents > ul > li ul > li:before {
+  content: url("chevrons-right-light.svg");
+  margin-right: 5.5px;
 }
 
 #TableOfContents a {
@@ -338,7 +370,7 @@ ol {
 }
 
 .archive-title {
-  font-family: "Nunito", serif;
+  font-family: "Nunito", sans-serif;
   font-size: 32px;
   margin-top: 60px;
   text-align: center;
@@ -350,7 +382,7 @@ ol {
 }
 
 .archive-item-link {
-  font-family: "Nunito", serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
   display: inline-block;
   text-decoration: none;
