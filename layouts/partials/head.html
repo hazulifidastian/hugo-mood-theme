@@ -3,28 +3,108 @@
 {{ hugo.Generator }}
 
 {{ if .IsHome }}
-<title>{{ .Title }}</title>
-<meta property="og:title" content="{{ .Title }}">
-<meta property="og:type" content="website">
+    <title>{{ .Title }}</title>
+    <meta property="og:title" content="{{ .Title }}">
+    <title itemprop="name">{{ .Title }}</title>
+    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta itemprop="name" content="{{ .Title }}" />
+    <meta name="application-name" content="{{ .Title }}" />
+    <meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
+    <meta property="og:type" content="website">
 {{ else }}
-<title>{{ .Title }} - {{ .Site.Title }}</title>
-<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <title itemprop="name">{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
+    <meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
+    <meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
+    <meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
 {{ end }}
 {{ with .Site.Params.favicon }}
-<link href='{{ . | absURL }}' rel='icon' type='image/x-icon' />
+    <link href='{{ . | absURL }}' rel='icon' type='image/x-icon' />
 {{ end }}
 
 {{ if .IsHome }}
 <meta property="description" content="{{ .Site.Params.description }}">
+<meta name="description" content="{{ .Site.Params.description }}" />
+<meta itemprop="description" content="{{ .Site.Params.description }}" />
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta name="twitter:description" content="{{ .Site.Params.description }}" />
 {{ else }}
 {{ if .Description }}
 <meta property="description" content="{{ .Description }}">
+<meta name="description" content="{{ .Description }}" />
+<meta itemprop="description" content="{{ .Description }}" />
+<meta property="og:description" content="{{ .Description }}" />
+<meta name="twitter:description" content="{{ .Description }}" />
 {{ end }}
 {{ end }}
 
 {{ if .Keywords }}
 <meta property="keywords" content="{{ delimit .Keywords ", " }}">
 {{ end }}
+
+{{ if eq .Section "stories" }} 
+    <meta property="og:type" content="article" />
+    <meta property="article:publisher" content="{{ .Site.Params.facebook }}" /> 
+    <meta property="og:article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} /> 
+    <meta property="article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+
+    <script defer type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": {{ .Title }},
+      "author": {
+        "@type": "Person",
+        "name": "{{ .Site.Params.github }}"
+      },
+      "datePublished": "{{ .Date.Format "2006-01-02" }}",
+      "description": {{ .Description }},
+      "wordCount": {{ .WordCount }},
+      "mainEntityOfPage": "True",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+      "image": {
+        "@type": "imageObject",
+        "url": "{{ with .Params.image }}{{ .Permalink }}{{ end }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Title }}",
+        "logo": {
+          "@type": "imageObject",
+          "url": "{{ .Site.Params.favicon }}"
+        }
+      }
+    }
+  </script>
+{{ end }}
+
+<base href="{{ .Permalink }}">
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" /> 
+<meta name="url" content="{{ .Permalink }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" /> 
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+<meta name="google-site-verification" content="Won_YvYvA2MlMOjNNvvHeLbAwVOs3Qt9-Dbaj-MtHAo" />
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#1997A5" /> 
+<meta name="msapplication-TileColor" content="#1997A5" />
+
+<meta name="keywords" content="" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" /> 
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Params.sitename }}" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" /> 
 
 {{ with .OutputFormats.Get "rss" -}}
 {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

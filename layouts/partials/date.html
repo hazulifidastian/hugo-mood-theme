@@ -1,0 +1,11 @@
+{{ if eq .Context.Site.Params.defaultContentLanguage "en"}}
+    {{ .Dt.Format "Monday, 02 Jan 2006" }}
+{{ else }}
+    {{ $days := index (index .Context.Site.Data.locale .Context.Site.Params.defaultContentLanguage).day }}
+    {{ $months := index (index .Context.Site.Data.locale .Context.Site.Params.defaultContentLanguage).month }}
+
+    {{ $dayName := index (index $days (string (time .Dt).Weekday)) }}
+    {{ $monthName := index (index $months (sub .Dt.Month 1)) }}
+    {{ $dayName }}, {{ .Dt.Day }} {{ $monthName }} {{ .Dt.Year }}
+{{ end }}
+

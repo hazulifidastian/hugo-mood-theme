@@ -4,7 +4,7 @@ A simple responsive blog theme for [Hugo](https://gohugo.io/).
 
 This theme based on [Hugo Lithium Theme](https://github.com/jrutheiser/hugo-lithium-theme)
 
-![Hugo Mood Theme Screenshot](https://raw.githubusercontent.com/hazulifidastian/hugo-mood-theme/master/images/screenshot.png)
+![Hugo Mood Theme Screenshot](https://raw.githubusercontent.com/hazulifidastian/hugo-mood-theme/master/images/screenshot.jpg)
 
 ## Features
 

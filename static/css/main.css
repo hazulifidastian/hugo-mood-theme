@@ -1,27 +1,25 @@
-/* nunito-regular - latin */
+/* lora-regular - latin */
 @font-face {
-  font-family: "Nunito";
+  font-family: "Lora";
   font-style: normal;
-  font-weight: 400;
-  src: local("Nunito Regular"), local("Nunito-Regular"),
-    url("../fonts/nunito-v12-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/nunito-v12-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-weight: normal;
+  src: local('Lora'), local('Lora-Regular'),
+    url("../fonts/Lora-Regular.woff2") format("woff2"),
+    url("../fonts/Lora-Regular.woff") format("woff");
   block-timeout: 0.3;
-  swap-timeout: 0; // Never swap
+  swap-timeout: 0;
 }
 
-/* noto-sans-regular - latin */
+/* roboto-regular - latin */
 @font-face {
-  font-family: "Noto Sans";
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 400;
-  src: local("Noto Sans"), local("NotoSans"),
-    url("../fonts/noto-sans-v9-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/noto-sans-v9-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-weight: normal;
+  src: local('Roboto'), local('Roboto-Regular'),
+    url("../fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
   block-timeout: 0.3;
-  swap-timeout: 0; // Never swap
+  swap-timeout: 0;
 }
 
 html,
@@ -32,10 +30,11 @@ body {
 }
 
 body {
-  font-family: "Noto Sans", sans-serif;
-  color: #333;
-  font-size: 16px;
-  text-rendering: optimizeLegibility;
+  font-family: "Roboto", sans-serif;
+  color: #17181e;
+  font-size: 17px;
+  text-size-adjust: 100%;
+  line-height: 27px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
@@ -47,8 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
-  color: #13022c;
+  font-family: "Lora", sans-serif;
   font-weight: 700;
 }
 
@@ -77,20 +75,57 @@ img {
 }
 
 .header {
-  padding: 20px 0;
+  padding: 3em 15px 1em 15px;
   position: relative;
 }
 
 .nav {
-  max-width: 800px;
+  display: block;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 0 15px;
-  text-align: right;
+  text-align: center;
+}
+
+.nav-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav-circle .bg {
+  animation:slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #1997A5 50%, #1F263B 50%, #34BEBA 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position: absolute;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.nav-circle .bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:13s;
+}
+
+.nav-circle .bg3 {
+  animation-duration:15s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }
 
 .nav-logo {
-  float: left;
-  margin-top: -11px;
   transition: transform 150ms ease-out;
 }
 
@@ -100,8 +135,51 @@ img {
 
 .nav-logo img {
   display: block;
-  max-height: 40px;
+  margin: auto;
+  max-height: 60px;
   width: auto;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav-about {
+  display: block;
+  margin: 15px auto;
+  max-width: 500px;
+}
+
+.nav-about .me {
+  font-size: 33px;
+  margin-bottom: 0;
+}
+
+.nav-about .socmed svg {
+  border-radius: 50%;
+  margin: auto 5px;
+  overflow: visible;
+  padding: 6px;
+  background-color: #17181e;
+  color: white;
+}
+
+.nav-about .socmed a {
+  color: inherit;
+}
+
+.nav-about .socmed a:hover > svg {
+  border-radius: 50%;
+  background-color: #ffce07;
+  transition: background 150ms ease;
+  color: inherit;
 }
 
 .nav-links {
@@ -121,28 +199,23 @@ img {
 
 .nav-links a {
   text-decoration: none;
-  color: #111;
 }
 
 .nav-links a:hover {
-  border-bottom: 2px solid #ffce07;
-  box-shadow: inset 0 -3px 0 #ffce07;
-  background: transparent;
-  transition: background 150ms ease;
+  -webkit-box-shadow: 0 -1px 0 0 #fff inset,0 -3px 0 0 #ffce07 inset;
+  box-shadow: 0 -1px 0 0 #fff inset,0 -3px 0 0 #ffce07 inset;
 }
 
 .content {
   max-width: 700px;
   margin: 60px auto 80px;
   padding: 0 15px;
-  line-height: 1.5;
 }
 
 .article-title {
   font-size: 34px;
+  line-height: 47px;
   margin: 0 0 0.3em;
-  line-height: 1.1;
-  color: #13022c;
   text-align: center;
 }
 
@@ -153,28 +226,6 @@ img {
 
 .article-content {
   padding-top: 0.9em;
-}
-
-.article-content h1,
-.article-content h2,
-.article-content h3,
-.article-content h4,
-.article-content h5,
-.article-content h6 {
-  /* text-decoration: underline; */
-}
-
-.article-content h2:before {
-  content: url("chevron-right.svg");
-  margin-right: -7px;
-}
-
-.article-content h3:before,
-.article-content h4:before,
-.article-content h5:before,
-.article-content h6:before {
-  content: url("chevrons-right.svg");
-  margin-right: -2px;
 }
 
 .article-content p {
@@ -204,15 +255,15 @@ img {
 }
 
 .article-content ul,
-ol {
+.article-content ol {
   margin: 15px 0 25px;
 }
 
 .article-content figure {
   margin: 0 0 25px 0;
   padding: 1em;
-  border: 2px dashed #ccc;
   text-align: center;
+  border: 1px solid #fafafa;
 }
 
 .article-content figure figcaption {
@@ -309,38 +360,6 @@ ol {
   transition: max-height 0.25s ease-in-out;
 }
 
-#article-toc .collapsible-content .toc-title:before {
-  content: url("chevron-right.svg");
-  margin-right: -0.3em;
-}
-
-#TableOfContents ul {
-  list-style: none;
-}
-
-#TableOfContents ul {
-  margin-bottom: 0;
-}
-
-#TableOfContents > ul {
-  padding-left: 1em;
-}
-
-#TableOfContents > ul > li {
-  margin-top: 0.7em;
-}
-
-#TableOfContents > ul > li:before {
-  content: url("chevron-right-light.svg");
-  font-weight: 600;
-  margin-right: 3.5px;
-}
-
-#TableOfContents > ul > li ul > li:before {
-  content: url("chevrons-right-light.svg");
-  margin-right: 5.5px;
-}
-
 #TableOfContents a {
   text-decoration: none;
   color: inherit;
@@ -353,10 +372,8 @@ ol {
 }
 
 .highlight {
-  border: 2px dashed #ccc !important;
   position: relative;
   margin: 40px 0;
-  padding: 0 1em;
   font-size: 14px;
 }
 
@@ -368,48 +385,51 @@ ol {
   margin: 0;
   padding: 0;
   list-style: none;
-  line-height: 1.5;
   text-align: left;
-  color: #111;
 }
 
 .archive-title {
-  font-family: "Nunito", sans-serif;
+  font-family: "Lora", sans-serif;
   font-size: 32px;
   margin-top: 60px;
   text-align: center;
 }
 
 .archive-item {
-  margin: 0;
-  padding: 0 0 0.6em;
+  margin: 0 0;
+  padding: 0 0 1.7em;
 }
 
 .archive-item-link {
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  display: inline-block;
+  font-family: "Lora", sans-serif;
+  font-weight: 700;
+  display: inline;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 21px;
   color: inherit;
   padding: 5px 0 0;
   border-bottom: none;
 }
 
-.archive-item-term-count {
+.archive-item-link:hover {
+  -webkit-box-shadow: 0 -1px 0 0 #fff inset,0 -3px 0 0 #ffce07 inset;
+  box-shadow: 0 -1px 0 0 #fff inset,0 -3px 0 0 #ffce07 inset;
+  transition: all 0.3s ease-out;
 }
 
-.archive-item-link:hover {
-  box-shadow: inset 0 -5px 0 #ffce07;
-  background: transparent;
-  transition: all 0.3s ease-out;
+.archive-description p {
+  margin: auto 0;
+  line-height: 25px;
 }
 
 .archive-meta {
   display: block;
-  color: rgba(17, 17, 17, 0.7);
   margin: 0 0 0.3em 0;
-  font-size: 90%;
+  font-size: 16px;
+}
+
+.archive-description {
+  font-size: 16px;
 }
 
 table {
@@ -453,16 +473,10 @@ td {
   color: #888;
   text-decoration: none;
   transition: color 150ms ease;
-  margin: 0 15px;
-}
-
-.footer-links a:hover,
-.footer-links a:focus {
-  color: #222;
+  margin: 0 10px;
 }
 
 .footer-links li::before {
-  content: "/";
   position: relative;
   left: -2px;
 }
@@ -470,6 +484,7 @@ td {
 .footer-links li:first-child::before {
   display: none;
 }
+
 .footer-links-kudos img {
   position: relative;
   top: 6px;
@@ -477,10 +492,6 @@ td {
 }
 
 @media (min-width: 600px) {
-  body {
-    font-size: 18px;
-  }
-
   .header {
     padding: 5em 0 1em;
   }
@@ -501,7 +512,7 @@ td {
   }
 
   .nav-logo img {
-    max-height: 50px;
+    max-height: 80px;
   }
 
   .nav-links {
@@ -512,7 +523,6 @@ td {
   }
 
   .content {
-    line-height: 1.5;
     margin: 100px auto;
   }
 
@@ -525,15 +535,11 @@ td {
   }
 
   .archive-item-link {
-    font-size: 19px;
+    font-size: 22px;
   }
 
   .article-title {
-    font-size: 42px;
-  }
-
-  .article-content h2 {
-    margin-left: -0.7em;
+    font-size: 37px;
   }
 
   .article-content li p {

@@ -6,13 +6,17 @@
 
     {{ if eq .Section "stories" }}
     <div class="article-meta">
-      <span class="article-date">{{ .Date.Format "January 2, 2006" }}</span>
+      <span class="article-date">
+        {{ partial "date.html" (dict "Context" . "Dt" .Date) }}
+      </span>
       <svg style="position:relative; bottom: -2px;" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
       <span class="article-duration">{{ .ReadingTime }} min read</span>
     </div>
     {{ end }}
 
-    {{ partial "description.html" . }}
+    {{ if .Params.toc }}
+      {{ partial "description.html" . }}
+    {{ end }}
 
     {{ if eq .Section "stories" }}
       {{ partial "toc.html" . }}
