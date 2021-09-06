@@ -1,0 +1,29 @@
+#app {
+  margin-top: 30px;
+}
+
+#app input, select, textarea {
+  display: block;
+  width: 87%;
+  margin: 10px 0px 15px;
+  padding: 10px 20px;
+  border: 1px solid #414455;
+  font-family: Roboto;
+  font-size: 17px;
+}
+
+#app input:focus, select:focus, textarea:focus {
+  outline: none;
+}
+
+#app p.small {
+  font-size: 15px;
+  margin: -10px 0 15px;
+}
+
+
+@media (min-width: 600px) {
+  #app input, select, textarea {
+    width: 94%;
+  }
+}
