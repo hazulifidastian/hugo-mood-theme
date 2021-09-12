@@ -4,12 +4,16 @@
 
 #app input, select, textarea {
   display: block;
-  width: 87%;
-  margin: 10px 0px 15px;
-  padding: 10px 20px;
+  width: 295px;
+  margin: 0px 0px 20px;
+  padding: 15px 15px;
   border: 1px solid #414455;
   font-family: Roboto;
   font-size: 17px;
+}
+
+#app select {
+  width: 327px;
 }
 
 #app input:focus, select:focus, textarea:focus {
@@ -18,12 +22,51 @@
 
 #app p.small {
   font-size: 15px;
-  margin: -10px 0 15px;
+  margin: -20px 0 25px;
+}
+
+#app .flash {
+  background-color: lightcoral;
 }
 
 
+@media (min-width: 500px) {
+  #app input, textarea {
+    width: 395px;
+  }
+
+  #app select {
+    width: 427px;
+  }
+}
+
 @media (min-width: 600px) {
-  #app input, select, textarea {
-    width: 94%;
+  #app input, textarea {
+    width: 495px;
+  }
+
+  #app select {
+    width: 527px;
+  }
+}
+
+
+@media (min-width: 700px) {
+  #app input, textarea {
+    width: 595px;
+  }
+
+  #app select {
+    width: 627px;
+  }
+}
+
+@media (min-width: 800px) {
+  #app input, textarea {
+    width: 668px;
+  }
+
+  #app select {
+    width: 700px;
   }
 }

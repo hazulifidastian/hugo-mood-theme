@@ -491,6 +491,10 @@ td {
   margin-left: 2px;
 }
 
+.footnotes ol li p a {
+  overflow-wrap: break-word !important;
+}
+
 @media (min-width: 600px) {
   .header {
     padding: 5em 0 1em;
