@@ -6,6 +6,11 @@
     {{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
       {{ range .Pages }}
       <article class="archive-item">
+        <div class="archive-section">
+          {{ if (eq .Section "apps") }}
+            <a class="article-section" href="{{ $.Site.BaseURL }}{{ .Section | urlize }}/">app</a>
+          {{ end }}
+        </div>
         <a href="{{ .Permalink }}" class="archive-item-link">{{ .Title }}</a>
         <div class="archive-meta">
           {{ partial "date.html" (dict "Context" . "Dt" .Date) }}

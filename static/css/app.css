@@ -2,49 +2,246 @@
   margin-top: 30px;
 }
 
-#app input, select, textarea {
+#app input, 
+#app select, 
+#app textarea {
   display: block;
-  width: 295px;
   margin: 0px 0px 20px;
   padding: 15px 15px;
-  border: 1px solid #414455;
   font-family: Roboto;
   font-size: 17px;
+  background: none;
+  border: 1px solid #ccc;
+}
+
+#app input:not([type=checkbox]), 
+#app input:not([type=radio]),
+#app select, 
+#app textarea {
+  width: 295px;
 }
 
 #app select {
   width: 327px;
 }
 
-#app input:focus, select:focus, textarea:focus {
+#app input:focus, 
+select:focus, 
+textarea:focus {
   outline: none;
 }
 
+
+/* https://www.w3schools.com/howto/howto_css_switch.asp */
+
+#app .switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+  margin: 0px 0px 20px;
+}
+
+/* Hide default HTML checkbox */
+#app .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+#app .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#app .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#app input:checked + .slider {
+  background-color: #2196F3;
+}
+
+#app input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+#app input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+#app .slider.round {
+  border-radius: 34px;
+}
+
+#app .slider.round:before {
+  border-radius: 50%;
+}
+
+/* end switch */
+
 #app p.small {
   font-size: 15px;
-  margin: -20px 0 25px;
+  margin: -20px 0 20px;
 }
 
 #app .flash {
   background-color: lightcoral;
 }
 
+#app .button {
+  background-color: #4CAF50;
+  border: 2px solid transparent;
+  color: white;
+  margin: 4px 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: none;
+  transition-duration: 0.4s;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+#app .button-xs {font-size: 10px; padding: 8px 25px;}
+#app .button-sm {font-size: 12px; padding: 10px 27px;}
+#app .button-md {font-size: 16px}
+#app .button-lx {font-size: 20px;}
+#app .button-xl {font-size: 24px;}
+
+#app .button-green {background-color: #4CAF50;}
+#app .button-blue {background-color: #008CBA;}
+#app .button-red {background-color: #f44336;} 
+#app .button-gray {background-color: #e7e7e7; color: black;}
+#app .button-black {background-color: #555555;}
+
+#app .button-green:hover {
+  border: 2px solid #4CAF50;
+  background-color: white;
+  color: #555;
+}
+
+#app .button-blue:hover {
+  border: 2px solid #008CBA;
+  background-color: white;
+  color: #555;
+}
+
+#app .button-red:hover {
+  border: 2px solid #f44336;
+  background-color: white;
+  color: #555;
+}
+
+#app .button-gray:hover {
+  border: 2px solid #e7e7e7;
+  background-color: white;
+  color: #555;
+}
+
+#app .button-black:hover {
+  border: 2px solid #555555;
+  background-color: white;
+  color: #555;
+}
+
+#app .button-outline-green {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+#app .button-outline-blue {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+#app .button-outline-red {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+#app .button-outline-gray {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+#app .button-outline-black {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+#app .button-outline-green:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#app .button-outline-blue:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+#app .button-outline-red:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+#app .button-outline-gray:hover {
+  background-color: #e7e7e7;
+}
+
+#app .button-outline-black:hover {
+  background-color: #555555;
+  color: white;
+}
 
 @media (min-width: 500px) {
-  #app input, textarea {
+  #app input:not([type=checkbox]), 
+  #app input:not([type=radio]),
+  #app textarea {
     width: 395px;
   }
 
+  #app p.small,
   #app select {
     width: 427px;
   }
 }
 
 @media (min-width: 600px) {
-  #app input, textarea {
+  #app input:not([type=checkbox]), 
+  #app input:not([type=radio]),
+  #app textarea {
     width: 495px;
   }
 
+  #app p.small,
   #app select {
     width: 527px;
   }
@@ -52,20 +249,26 @@
 
 
 @media (min-width: 700px) {
-  #app input, textarea {
+  #app input:not([type=checkbox]), 
+  #app input:not([type=radio]),
+  #app textarea {
     width: 595px;
   }
 
+  #app p.small,
   #app select {
     width: 627px;
   }
 }
 
 @media (min-width: 800px) {
-  #app input, textarea {
+  #app input:not([type=checkbox]), 
+  #app input:not([type=radio]),
+  #app textarea {
     width: 668px;
   }
 
+  #app p.small,
   #app select {
     width: 700px;
   }

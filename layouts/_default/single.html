@@ -2,6 +2,10 @@
 
 <main class="content" role="main">
   <article class="article">
+    <div class="article-section">
+      <a class="article-section" href="{{ $.Site.BaseURL }}{{ .Section | urlize }}/">{{ .Section }}</a>
+    </div>
+
     <h1 class="article-title">{{ .Title }}</h1>
 
     {{ if or (eq .Section "stories") (eq .Section "apps") }}
